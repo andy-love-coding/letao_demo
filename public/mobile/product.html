@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+  <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/product.css ">
+  <title>乐淘-商品详情</title>
+</head>
+<body>
+<div class="lt_container">
+  <header class="lt_header">
+    <a href="javascript:history.back()" class="left"><span class="fa fa-chevron-left"></span></a>
+    <h3>商品详情</h3>
+    <a href="/mobile/index.html" class="right"><span class="fa fa-home"></span></a>
+  </header>
+  <div class="lt_content">
+    <!-- lt_wrapper 用这个容器来承载内容，是因为 lt_content 容器有padding，如果lt_content的孩子有定位的话，依然会从lt_content的(0,0)位置开始计算而忽略padding，这样会不方便计算，所以在lt_content中加一个盒子(lt_wrapper) 来承载内容-->
+    <div class="lt_wrapper">
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <!-- 商品详情 -->
+          <!-- to render -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 底部操作 -->
+  <div class="lt_btn">
+    <a class="btn_cart" href="/mobile/user/cart.html"><span class="fa fa-shopping-cart"></span></a>
+    <div class="btn_box">
+      <a class="addCart" href="javascript:;">加入购物车</a>
+      <a class="pay" href="javascript:;">立即支付</a>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/template" id="productDetail">
+  <!-- 轮播图：通过 js 渲染的轮播图，记得需要在渲染的时候，手动初始化轮播图 -->
+  {{ set defaultAddr = '/mobile/images/none01.jpg' }}
+  <%
+    var picArr = [{ picAddr: defaultAddr }];
+    if ($data.pic && $data.pic.length) {
+      picArr = $data.pic;
+    }
+  %>
+  <div class="mui-slider">
+    <div class="mui-slider-group mui-slider-loop">
+      <!-- 即使只有一张图的情况，哪怕是默认的那一张图，首位重复一次也是可以的 -->
+      <div class="mui-slider-item"><a href="#"><img src="{{ picArr[picArr.length-1].picAddr || defaultAddr }}" /></a></div>
+      {{ each picArr }}
+      <div class="mui-slider-item"><a href="#"><img src="{{ $value.picAddr || defaultAddr }}" /></a></div>
+      {{ /each }}
+      <div class="mui-slider-item"><a href="#"><img src="{{ picArr[0].picAddr || defaultAddr }}" /></a></div>              
+    </div>
+    <div class="mui-slider-indicator">
+      {{ each picArr }}
+      <div class="mui-indicator {{ $index===0 ? 'mui-active' : '' }}"></div>
+      {{ /each }}
+    </div>
+  </div>
+  <!-- 商品名称 -->
+  <div class="pro_name">
+    <p class="mui-ellipsis-2">{{ proName }}</p>
+  </div>
+  <!-- 商品价格 -->
+  <div class="pro_price">
+    价格：<span class="now">&yen;{{ price }}</span> <span class="old"> &yen;{{ oldPrice }}</span>
+  </div>
+  <!-- 商品尺码 -->
+  <div class="pro_size">
+    尺码：
+    <%
+      var sizeArr = $data.size.split('-');
+      for (var i=sizeArr[0]; i<=sizeArr[1]; i++) {
+    %>
+        <span class="{{ currentSize==i?'now':'' }}" data-size="{{ i }}">{{ i }}</span>
+    <%
+      }
+    %>  
+  </div>
+  <!-- 商品数量 -->
+  <div class="pro_num">
+    <span>数量：</span>
+    <p class="box">
+      <span class="reduce">-</span>
+      <input class="orderNum" type="number" value="1" readonly>
+      <span class="plus">+</span>
+    </p>
+    <span>剩余：</span> 
+    <p class="rest">{{ num }}</p>
+    <span>件</span> 
+  </div>
+</script>
+<script src="assets/mui/js/mui.min.js"></script>
+<script src="assets/zepto/zepto.min.js"></script>
+<script src="assets/arTemplate/template-web.js"></script>
+<script src="js/mobile.js"></script>
+<script src="js/product.js"></script>
+</html>

@@ -1,0 +1,117 @@
+#product_item {
+  display: block;
+  padding-right: 20px;
+}
+.lt_content {
+  padding-bottom: 85px; 
+}
+#cart .name {
+  color: #333;
+}
+#cart .price {
+  position: relative;
+}
+#cart .price .now {
+  color: red;
+}
+#cart .price .old {
+  color: #666;
+  text-decoration: line-through;
+}
+#cart .price .num {
+  position: absolute;
+  right: 0;
+}
+#cart input {
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+}
+.pro_size {
+  font-size: 14px;
+}
+.pro_size span {
+  font-size: 12px;
+  padding: 5px; /* 行内元素可以用 padding 撑开宽高 */
+  border: 1px solid #666666;
+  line-height: 32px;
+}
+.pro_size span.now {
+  background: #fa0;
+}
+.pro_num {
+  height: 50px;
+}
+.pro_num>span {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+.pro_num .box {
+  /* display: inline-block; */
+  float: left;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  margin-right: 10px;
+}
+.pro_num .box span {
+  float: left;
+  width: 30px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  font-size: 12px;
+  color: #333;
+}
+.pro_num .box input.orderNum {
+  float: left;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+}
+.pro_num p.rest {
+  float: left;
+  font-size: 17px;
+  margin: 0;
+  color: #333;
+  line-height: 30px;
+  height: 30px;
+  margin-right: 3px;
+}
+
+/* 金额模块 */
+.lt_amount {
+  position: absolute;
+  left: 0;
+  bottom: 55px;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  background: #ccc;
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 0 10px;
+}
+.lt_amount span {}
+.lt_amount a {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  background: red;
+  color: #fff;
+  font-weight: normal;
+}

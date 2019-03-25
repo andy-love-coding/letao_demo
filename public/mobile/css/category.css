@@ -1,0 +1,66 @@
+/* 两栏自适应：左侧 */
+.cateLeft {
+  width: 90px;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  /* background: pink; */
+}
+.cateLeft ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cateLeft ul li {
+  width: 90px;
+  height: 50px;
+  line-height: 50px;
+  background: #f3f4f5;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.cateLeft ul li a {
+  display: block;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+}
+.cateLeft ul li.now {
+  border-right: none;
+  background: #fff;
+}
+.cateLeft ul li.now a {
+  color: red;
+}
+
+/* 两栏自适应：左侧 */
+.cateRight {
+  overflow: hidden;
+  height: 100%;
+}
+.cateRight ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cateRight ul li {
+  width: 33.3333%;
+  float: left;
+}
+.cateRight ul li a {
+  display: block;
+  width: 100%;
+}
+.cateRight ul li a img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+}
+.cateRight ul li a p {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}

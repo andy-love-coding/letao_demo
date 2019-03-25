@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../assets/mui/css/mui.min.css">
+  <link rel="stylesheet" href="../assets/fontAwesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+  <link rel="stylesheet" href="../css/user/index.css ">
+  <title>个人中心</title>
+</head>
+<body>
+<div class="lt_container">
+  <header class="lt_header">
+    <!-- <a href="javascript:history.back()" class="left"><span class="fa fa-chevron-left"></span></a> -->
+    <h3>个人中心</h3>
+    <!-- <a href="search.html" class="right"><span class="fa fa-search"></span></a> -->
+  </header>
+  <div class="lt_content">
+    <!-- lt_wrapper 用这个容器来承载内容，是因为 lt_content 容器有padding，如果lt_content的孩子有定位的话，依然会从lt_content的(0,0)位置开始计算而忽略padding，这样会不方便计算，所以在lt_content中加一个盒子(lt_wrapper) 来承载内容-->
+    <div class="lt_wrapper">
+      <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+          <a id="userinfo" class="mui-navigate-right">
+              <img class="mui-media-object mui-pull-left" src="../images/user.jpg">
+              <div class="mui-media-body">
+                  加载中...
+                  <p class='mui-ellipsis'>手机号：加载中...</p>
+              </div>
+          </a>
+        </li>
+        <li class="mui-table-view-cell">
+          <a class="mui-navigate-right">账号与安全</a>
+        </li>
+        <li class="mui-table-view-cell">
+          <a class="mui-navigate-right">我的购物车</a>
+        </li>
+        <li class="mui-table-view-cell">
+          <a class="mui-navigate-right">收货地址管理</a>
+        </li>
+      </ul> 
+      <div class="btn_box">
+        <a href="javascript:;" class="mui-btn mui-btn-danger">退出登录</a>
+      </div>     
+    </div>
+  </div>
+  <footer class="lt_tabs">
+    <a href="../index.html"><span class="fa fa-home"></span><p>首页</p></a>
+    <a href="../category.html"><span class="fa fa-bars"></span><p>分类</p></a>
+    <a href="../user/cart.html"><span class="fa fa-shopping-cart"></span><p>购物车</p></a>
+    <a href="../user/index.html" class="now"><span class="fa fa-user"></span><p>个人中心</p></a>
+  </footer>
+</div>
+</body>
+<script src="../assets/mui/js/mui.min.js"></script>
+<script src="../assets/zepto/zepto.min.js"></script>
+<script src="../js/mobile.js"></script>
+<script src="../js/user/index.js"></script>
+</html>

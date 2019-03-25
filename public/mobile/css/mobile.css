@@ -1,0 +1,178 @@
+/* 共用样式 */
+
+/* 主体容器：绝对定位的方式造一个【全屏容器】 */
+.lt_container {
+  width: 100%;
+  height: 100%;
+  position: absolute; /* absolute 基于最近的有定位的上级元素，这里会找到 window，所以这个是全屏容器  */
+  top: 0;
+  left: 0;
+  /* background: red; */
+}
+/* 头部 导航 */
+.lt_header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background: #069;
+  color: #fff;
+  line-height: 45px;
+}
+.lt_header h3 {
+  font-size: 18px;
+  text-align: center;
+  margin: 0;
+  line-height: 45px;
+  font-weight: normal;
+}
+.lt_header a {
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+}
+.lt_header .left {
+  left: 0;
+}
+.lt_header .right {
+  right: 0;
+}
+
+/* 中间 内容 */
+.lt_content { 
+  width: 100%;
+  height: 100%;
+  padding-top: 45px;
+  padding-bottom: 55px;  
+}
+/* lt_wrapper 用这个容器来承载内容，是因为 lt_content 容器有padding，如果lt_content的孩子有定位的话，依然会从lt_content的(0,0)位置开始计算而忽略padding，这样会不方便计算，所以在lt_content中加一个盒子(lt_wrapper) 来承载内容 */
+.lt_content .lt_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* 底部 页签 */
+.lt_tabs {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 55px;
+  width: 100%;
+  background: #069;
+}
+.lt_tabs a {
+  width: 25%;
+  float: left;
+  text-align: center;
+  color: #fff;
+  padding-top: 8px;
+}
+.lt_tabs a p {
+  color: #fff;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+.lt_tabs a.now {
+  color: #fa0;
+}
+.lt_tabs a.now p {
+  color: #fa0;
+}
+
+/* 产品容器 */
+.lt_product {
+  padding: 0 10px;
+  padding-bottom: 10px; 
+}
+.lt_product ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+.lt_product ul li {
+  width: 50%;
+  float: left;
+  margin-top: 10px; 
+}
+.lt_product ul li:nth-child(2n+1) {
+  padding-right: 5px;
+}
+.lt_product ul li:nth-child(2n+2) {
+  padding-left: 5px;
+}
+.lt_product ul li a{
+  display: block;
+  width: 100%;
+  /* height: 200px; */
+  box-shadow: 0 0 1px #666;
+  /* border: 1px solid #666; */
+}
+.lt_proBox {
+  padding-bottom: 5px;
+}
+.lt_proBox img  {
+  width: 100%;
+  display: block;
+  color: #444;
+}
+.lt_proBox .name {
+  padding: 0 5px;
+}
+.lt_proBox .price {
+  font-size: 12px;
+  text-align: center;  
+}
+.lt_proBox .price .nowPrice {
+  color: red;
+}
+.lt_proBox .price .oldPrice {
+  color: #ccc;
+  text-decoration: line-through;
+}
+.lt_proBox button {
+  display: block;
+  margin: 0 auto;
+  background: #069;
+  border-color: #069;
+  color: #fff;
+}
+/* 搜索框 */
+.lt_search {
+  width: 100%;
+  padding: 10px;
+  position: relative;
+}
+.lt_search input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #069;
+  border-radius: 2px;
+  background: #fff;
+  margin: 0;
+  padding: 0 10px;
+  text-align: left;
+  font-size: 12px;
+}
+.lt_search a{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background: #069;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  /* border-radius: 0 2px 2px 0; */
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
